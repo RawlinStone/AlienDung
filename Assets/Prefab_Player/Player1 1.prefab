@@ -71,7 +71,8 @@ GameObject:
   - component: {fileID: 807358501861511386}
   - component: {fileID: 6018668074100371773}
   - component: {fileID: 6018668074100371770}
-  - component: {fileID: 6018668074100371774}
+  - component: {fileID: 4804466118156602340}
+  - component: {fileID: 422276980892754516}
   m_Layer: 0
   m_Name: Player1Sprite
   m_TagString: Untagged
@@ -188,7 +189,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6018668074100371774
+--- !u!61 &4804466118156602340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807358501861511364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.25, y: 0.32}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.32}
+  m_EdgeRadius: 0
+--- !u!114 &422276980892754516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +224,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 807358501861511364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1a82c1569c3d942851bf35b744fc34, type: 3}
+  m_Script: {fileID: 11500000, guid: 8379647483b6873428144733306a3e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5

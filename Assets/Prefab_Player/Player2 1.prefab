@@ -253,7 +253,8 @@ GameObject:
   - component: {fileID: 3921223254998127165}
   - component: {fileID: 3697934440100347456}
   - component: {fileID: 3697934440100347486}
-  - component: {fileID: 3697934440100347487}
+  - component: {fileID: 4022782231014336280}
+  - component: {fileID: 3790689619744275343}
   m_Layer: 0
   m_Name: Player2Sprite
   m_TagString: Untagged
@@ -366,7 +367,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3697934440100347487
+--- !u!114 &4022782231014336280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,7 +376,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3921223254998127167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1a82c1569c3d942851bf35b744fc34, type: 3}
+  m_Script: {fileID: 11500000, guid: 8379647483b6873428144733306a3e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -383,6 +384,32 @@ MonoBehaviour:
   animator: {fileID: 3697934440100347486}
   px: 0
   py: 0
+--- !u!61 &3790689619744275343
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921223254998127167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000040233135, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.27, y: 0.31}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.269992, y: 0.31}
+  m_EdgeRadius: 0
 --- !u!1 &3921223255134438483
 GameObject:
   m_ObjectHideFlags: 0
