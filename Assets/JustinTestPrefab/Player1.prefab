@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2846330005112822561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6246026508673842647}
+  - component: {fileID: 6617338150144282433}
+  m_Layer: 0
+  m_Name: Player1WeaponDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6246026508673842647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846330005112822561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6391394014264528002}
+  m_Father: {fileID: 6391394013536346615}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6617338150144282433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846330005112822561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da308f3473075c4d89340e8f7093c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6391394013536346614
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +72,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6391394014264528002}
+  - {fileID: 6246026508673842647}
   m_Father: {fileID: 6391394015204302712}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -275,7 +319,7 @@ MonoBehaviour:
   bullet: {fileID: 8767765097515159151, guid: 57eeaf7b6df72e7408ff4be10cce38a8, type: 3}
   bulletSpeed: 10
   cooldown: 0.5
-  ammo: 0
+  ammo: 10
   infiniteAmmo: 0
 --- !u!1 &6391394014264528001
 GameObject:
@@ -288,7 +332,7 @@ GameObject:
   - component: {fileID: 6391394014264528002}
   - component: {fileID: 420795104222773473}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Player1Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +352,7 @@ Transform:
   - {fileID: 6391394013751191204}
   - {fileID: 6391394013768730306}
   - {fileID: 6391394015276810448}
-  m_Father: {fileID: 6391394013536346615}
+  m_Father: {fileID: 6246026508673842647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &420795104222773473
