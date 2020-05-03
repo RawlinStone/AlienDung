@@ -12,8 +12,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 movement;
 
     //walk direction: 0 is up, 1 is right, 2 is down, 3 is left
-    public float walkDirection = 2;
-    public float angle;
+    private float walkDirection = 2;
+    private float angle;
     public Animator anim;
 
 
