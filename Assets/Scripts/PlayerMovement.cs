@@ -11,10 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public float px;
     public float py;
-    public GameObject left;
-    public GameObject right;
-    public GameObject up;
-    public GameObject down;
+    
     
    
 
@@ -50,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", movement.sqrMagnitude);
         if (px > movement.x)
         {
-            this.gameObject.transform.GetChild(0).transform.position = right.transform.position;
+           
             animator.SetBool("right", true);
             animator.SetBool("left", false);
             animator.SetBool("up", false);
@@ -59,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (px < movement.x)
         {
-            this.gameObject.transform.GetChild(0).transform.position = left.transform.position;
+            
             animator.SetBool("right", false);
             animator.SetBool("left", true);
             animator.SetBool("up", false);
@@ -68,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (py < movement.y)
         {
-            this.gameObject.transform.GetChild(0).transform.position = down.transform.position;
+            
             animator.SetBool("right", false);
             animator.SetBool("left", false);
             animator.SetBool("up", false);
@@ -77,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (py > movement.y)
         {
-            this.gameObject.transform.GetChild(0).transform.position = up.transform.position;
+           
             animator.SetBool("right", false);
             animator.SetBool("left", false);
             animator.SetBool("up", true);
