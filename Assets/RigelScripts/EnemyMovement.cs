@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
+    private GameObject[] players;
+    private Transform targetPlayer;
     public EnemyFollow followArea;
     private Rigidbody2D rb;
 
@@ -12,10 +13,12 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 movement;
 
     //walk direction: 0 is up, 1 is right, 2 is down, 3 is left
-    private float walkDirection = 2;
+    [SerializeField]
+    public float walkDirection = 2;
     private float angle;
     public Animator anim;
 
+    public GameObject changeAttackPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,9 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        targetPlayer = followArea.currentPlayer.transform;
+
+        Vector3 direction = targetPlayer.position - transform.position;
 
         direction.Normalize();
         movement = direction;
@@ -40,18 +45,22 @@ public class EnemyMovement : MonoBehaviour
             if (angle < 135 && angle > 45)
             {//moving up
                 walkDirection = 0;
+                changeAttackPosition.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
             }
             else if (angle < 45 && angle > -45)
             {//moving right
                 walkDirection = 1;
+                changeAttackPosition.transform.position = new Vector2(transform.position.x + 1, transform.position.y - .5f);
             }
             else if (angle < -45 && angle > -135)
             {//moving down
                 walkDirection = 2;
+                changeAttackPosition.transform.position = new Vector2(transform.position.x, transform.position.y-1);
             }
             else
             {
                 walkDirection = 3;
+                changeAttackPosition.transform.position = new Vector2(transform.position.x - 1, transform.position.y - 0.5f);
             }
 
             anim.SetFloat("AlienDirection", walkDirection);
@@ -61,8 +70,6 @@ public class EnemyMovement : MonoBehaviour
         {
             anim.SetFloat("speed", 0);
         }
-        
-
     }
 
     void FixedUpdate()
