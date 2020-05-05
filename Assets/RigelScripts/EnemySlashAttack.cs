@@ -26,19 +26,55 @@ public class EnemySlashAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attackTime <= 0)
+        //cool down
+        if (attackTime < 0)
         {
-            //enemy attack
+            
+            //check if any of the players are in the attack zone
             Collider2D[] playersToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackPlayers);
-            for (int i = 0; i < playersToDamage.Length; i++)
+            if (playersToDamage.Length > 0)
             {
-                //do damage
-                Debug.Log("player attacked");
+                //deal damage to each player
+                for (int i = 0; i < playersToDamage.Length; i++)
+                {
+                    //do damage
+                    Debug.Log("player attacked");
+                }
+
+                //play animation
+                //slashAnim.SetFloat("Alien1AttackDirection", movement.walkDirection);
+                if (movement.walkDirection == 0)
+                {
+                    slashAnim.SetTrigger("Up");
+                }
+                else if (movement.walkDirection == 1)
+                {
+                    slashAnim.SetTrigger("Right");
+                }
+                else if (movement.walkDirection == 2)
+                {
+                    slashAnim.SetTrigger("Down");
+                }
+                else if (movement.walkDirection == 3)
+                {
+                    slashAnim.SetTrigger("Left");
+                }
+
+                //reset the cooldown
+                attackTime = attackCoolDown;
             }
-            attackTime = attackCoolDown;
+            else
+            {
+                slashAnim.SetTrigger("Idle");
+                //set the attack timer back to 0
+                attackTime = 0;
+            }
         }
         else
         {
+            slashAnim.SetBool("Idle", true);
+
+            //decrease timer
             attackTime -= Time.deltaTime;
         }
     }
