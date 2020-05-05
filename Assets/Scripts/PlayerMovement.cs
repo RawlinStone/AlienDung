@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", movement.sqrMagnitude);
         if (px > movement.x)
         {
-           
+            
             animator.SetBool("right", true);
             animator.SetBool("left", false);
             animator.SetBool("up", false);
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (px < movement.x)
         {
-            
+          
             animator.SetBool("right", false);
             animator.SetBool("left", true);
             animator.SetBool("up", false);
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (py < movement.y)
         {
-            
+          
             animator.SetBool("right", false);
             animator.SetBool("left", false);
             animator.SetBool("up", false);
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (py > movement.y)
         {
-           
+            
             animator.SetBool("right", false);
             animator.SetBool("left", false);
             animator.SetBool("up", true);
