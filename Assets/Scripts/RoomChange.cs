@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class RoomChange : MonoBehaviour
 {
-    public Camera cam;
-    public bool Up;
-    public bool Down;
-    public bool Left;
-    public bool Right;
-    public GameObject p1;
-    public GameObject p2;
-    public GameObject p11;
-    public GameObject p22;
-    public GameObject p1position;
-    public GameObject p2position;
-    
+    public GameObject player1Position;
+    public GameObject player2Position;
+    public Vector2 changeCameraTop;
+    public Vector2 changeCameraBottom;
+    public Vector3 playerChange;
+    public Vector3 optionalplayerChange;
+    public Camera MainCamera;
+    public float cameraSize;
+    private CameraMovement cam;
+    public bool changeOccured;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = Camera.main.GetComponent<CameraMovement>();
+        MainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -32,68 +31,60 @@ public class RoomChange : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        
         Debug.Log(collision.gameObject.tag);
         if (collision.CompareTag("Player"))
         {
-            if (Up)
+            Vector2 temp1 = cam.maxCam;
+            Vector2 temp2 = cam.minCam;
+            float temp3 = MainCamera.orthographicSize;
+            cam.maxCam = changeCameraTop;
+            cam.minCam = changeCameraBottom;
+            changeCameraTop = temp1;
+            changeCameraBottom = temp2;
+            MainCamera.orthographicSize = cameraSize;
+            cameraSize = temp3;
+            if (changeOccured)
             {
-                Vector3 update = new Vector3();
-                update.y += 12;
-                cam.transform.position = new Vector3(cam.transform.position.x, update.y + cam.transform.position.y, cam.transform.position.z);
-                p1position.transform.position = p1.transform.position;
-                p2position.transform.position = p2.transform.position;
-                Up = false;
-                Down = true;
-                switchSpawn(); 
+                
+                collision.gameObject.transform.position -= optionalplayerChange;
+                Debug.Log(collision.gameObject.name); 
+                if(collision.gameObject.name == "Player1Sprite")
+                {
+                    player2Position.transform.position = collision.gameObject.transform.position;
+                }
+                else if (collision.gameObject.name == "Player2Sprite")
+                {
+                    player1Position.transform.position = collision.gameObject.transform.position;
+                }
+                changeOccured = false;
             }
-            else if (Down) 
+            else
             {
-                Vector3 update = new Vector3();
-                update.y -= 12;
-                cam.transform.position = new Vector3(cam.transform.position.x, update.y + cam.transform.position.y, cam.transform.position.z);
-                p1position.transform.position = p1.transform.position;
-                p2position.transform.position = p2.transform.position;
-                Down = false;
-                Up = true; 
-                switchSpawn();
-
-            }
-
-            else if (Left)
-            {
-                Vector3 update = new Vector3();
-                update.x -= 20;
-                cam.transform.position = new Vector3(update.x + cam.transform.position.x, cam.transform.position.y, cam.transform.position.z);
-                p1position.transform.position = p1.transform.position;
-                p2position.transform.position = p2.transform.position;
-                Left = false;
-                Right = true;
-                switchSpawn();
-            }
-            else if (Right)
-            {
-                Vector3 update = new Vector3();
-                update.x += 20;
-                cam.transform.position = new Vector3(update.x + cam.transform.position.x, cam.transform.position.y, cam.transform.position.z);
-                p1position.transform.position = p1.transform.position;
-                p2position.transform.position = p2.transform.position;
-                Left = true;
-                Right = false;
-                switchSpawn();
+                collision.gameObject.transform.position += playerChange;
+                Debug.Log(collision.gameObject.name);
+                if (collision.gameObject.name == "Player1Sprite")
+                {
+                    player2Position.transform.position = collision.gameObject.transform.position;
+                }
+                else if(collision.gameObject.name == "Player2Sprite")
+                {
+                    player1Position.transform.position = collision.gameObject.transform.position;
+                }
+                 
+              
+                changeOccured = true;
             }
 
+           
         }
     }
 
-    private void switchSpawn()
-    {
-        GameObject temp1 = p1;
-        GameObject temp2 = p2;
-        p1 = p11;
-        p2 = p22;
-        p11 = temp1;
-        p22 = temp2;
-    }
+    
+
+    
+
+
 
     
 
