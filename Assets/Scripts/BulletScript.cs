@@ -44,6 +44,13 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
+            //Debug.Log("hit");
+            if (collide.tag != "Player")
+            {
+                //Debug.Log("player");
+                collide.gameObject.GetComponent<HealthScript>().change(-1);
+                Destroy(gameObject);
+            }
             //add damage script
         }
     }
