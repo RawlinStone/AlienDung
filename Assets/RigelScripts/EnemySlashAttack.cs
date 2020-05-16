@@ -12,15 +12,20 @@ public class EnemySlashAttack : MonoBehaviour
     public Transform attackPosition;
     public float attackRange;
     public LayerMask attackPlayers;
+    private float animAttack;
 
     private EnemyMovement movement;
-    public Animator slashAnim;
+    private float enemySpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         movement = GetComponent<EnemyMovement>();
         attackTime = attackCoolDown;
+        animAttack = .75f;
+
+        enemySpeed = movement.speed;
     }
 
     // Update is called once per frame
@@ -29,51 +34,50 @@ public class EnemySlashAttack : MonoBehaviour
         //cool down
         if (attackTime < 0)
         {
-            
+            bool flag = false;
+
             //check if any of the players are in the attack zone
             Collider2D[] playersToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackPlayers);
             if (playersToDamage.Length > 0)
             {
+                attackTime = attackCoolDown;
+
                 //deal damage to each player
                 for (int i = 0; i < playersToDamage.Length; i++)
                 {
                     //do damage
                     Debug.Log("player attacked");
                 }
-
                 //play animation
-                //slashAnim.SetFloat("Alien1AttackDirection", movement.walkDirection);
                 if (movement.walkDirection == 0)
                 {
-                    slashAnim.SetTrigger("Up");
+                    //slashAnim.SetTrigger("Up");
+                    movement.anim.SetTrigger("AttackUp");
                 }
                 else if (movement.walkDirection == 1)
                 {
-                    slashAnim.SetTrigger("Right");
+                    //lashAnim.SetTrigger("Right");
+                    movement.anim.SetTrigger("AttackRight");
                 }
                 else if (movement.walkDirection == 2)
                 {
-                    slashAnim.SetTrigger("Down");
+                    //slashAnim.SetTrigger("Down");
+                    movement.anim.SetTrigger("AttackDown");
                 }
                 else if (movement.walkDirection == 3)
                 {
-                    slashAnim.SetTrigger("Left");
+                    //slashAnim.SetTrigger("Left");
+                    movement.anim.SetTrigger("AttackLeft");
                 }
-
-                //reset the cooldown
-                attackTime = attackCoolDown;
             }
             else
             {
-                slashAnim.SetTrigger("Idle");
                 //set the attack timer back to 0
                 attackTime = 0;
             }
         }
         else
         {
-            slashAnim.SetBool("Idle", true);
-
             //decrease timer
             attackTime -= Time.deltaTime;
         }

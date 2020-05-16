@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
             else if (angle < 45 && angle > -45)
             {//moving right
                 walkDirection = 1;
-                changeAttackPosition.transform.position = new Vector2(transform.position.x + 1, transform.position.y - .5f);
+                changeAttackPosition.transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - .25f);
             }
             else if (angle < -45 && angle > -135)
             {//moving down
@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 walkDirection = 3;
-                changeAttackPosition.transform.position = new Vector2(transform.position.x - 1, transform.position.y - 0.5f);
+                changeAttackPosition.transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y - 0.25f);
             }
 
             anim.SetFloat("AlienDirection", walkDirection);
