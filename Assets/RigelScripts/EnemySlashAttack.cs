@@ -12,7 +12,6 @@ public class EnemySlashAttack : MonoBehaviour
     public Transform attackPosition;
     public float attackRange;
     public LayerMask attackPlayers;
-    private float animAttack;
 
     private EnemyMovement movement;
     private float enemySpeed;
@@ -23,7 +22,6 @@ public class EnemySlashAttack : MonoBehaviour
         
         movement = GetComponent<EnemyMovement>();
         attackTime = attackCoolDown;
-        animAttack = .75f;
 
         enemySpeed = movement.speed;
     }
@@ -34,8 +32,6 @@ public class EnemySlashAttack : MonoBehaviour
         //cool down
         if (attackTime < 0)
         {
-            bool flag = false;
-
             //check if any of the players are in the attack zone
             Collider2D[] playersToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackPlayers);
             if (playersToDamage.Length > 0)
