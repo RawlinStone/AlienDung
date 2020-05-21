@@ -26,6 +26,7 @@ public class BulletScript : MonoBehaviour
                 {
                     var boom = Instantiate(explosion);
                     boom.transform.position = transform.position;
+                    //Debug.Log("ekaspuloshun");
                 }
                 Destroy(gameObject);
             }
@@ -40,18 +41,26 @@ public class BulletScript : MonoBehaviour
     {
         if (explode)
         {
-            //instantiate explosion
+            //Debug.Log("boom");
+            var boom = Instantiate(explosion);
+            boom.transform.position = transform.position;
+            Destroy(gameObject);
         }
         else
         {
             //Debug.Log("hit");
-            if (collide.tag != "Player")
+            //change enemy to whatever
+            if (collide.tag == "Enemy")
             {
                 //Debug.Log("player");
                 collide.gameObject.GetComponent<HealthScript>().change(-1);
                 Destroy(gameObject);
             }
             //add damage script
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

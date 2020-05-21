@@ -31,6 +31,7 @@ public class GunScript : MonoBehaviour
                 }
                 var projectile = Instantiate(bullet);
                 projectile.transform.position = transform.position;
+                projectile.transform.rotation = transform.rotation; 
                 projectile.GetComponent<Rigidbody2D>().velocity = (projectile.transform.position - transform.parent.parent.position) * bulletSpeed;
                 timer = cooldown;
             }
