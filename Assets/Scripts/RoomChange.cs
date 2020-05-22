@@ -10,6 +10,8 @@ public class RoomChange : MonoBehaviour
     public float camSize;
     public Vector3 roomTransform;
     public Vector3 playerMove;
+    
+    
 
 
 
@@ -32,6 +34,7 @@ public class RoomChange : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.CompareTag("Player"))
         {
+            
             changeCameraSize();
             changeCameraPosition();
             if(collision.gameObject.name == "Player1Sprite")
@@ -69,6 +72,8 @@ public class RoomChange : MonoBehaviour
         roomTransform = temp;
 
     }
+
+   
 
 
 

@@ -196,6 +196,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 364fb4106976181429aeed41d0b0d3ca, type: 3}
+--- !u!1 &345545503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345545504}
+  m_Layer: 0
+  m_Name: BlackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &345545504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345545503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.5, y: 31.2, z: -1.3488913}
+  m_LocalScale: {x: 175.16275, y: 179.07414, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 1856370236749043658, guid: 76c9a35908483484995602fd274bc50b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6152344
+      value: -7.133521
       objectReference: {fileID: 0}
     - target: {fileID: 1856370236749043658, guid: 76c9a35908483484995602fd274bc50b,
         type: 3}
@@ -345,6 +375,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856370237157982630, guid: 76c9a35908483484995602fd274bc50b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3269148
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856370237157982630, guid: 76c9a35908483484995602fd274bc50b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3198078
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76c9a35908483484995602fd274bc50b, type: 3}
@@ -452,7 +492,7 @@ MonoBehaviour:
   player1pos: {fileID: 1743906286}
   player2pos: {fileID: 117754400}
   cam: {fileID: 519420031}
-  camSize: 0
+  camSize: 10.89182
   roomTransform: {x: 30.12, y: 0, z: -10}
   playerMove: {x: 5, y: 0, z: 0}
 --- !u!4 &1733357751
