@@ -10,6 +10,7 @@ public class RoomChange : MonoBehaviour
     public float camSize;
     public Vector3 roomTransform;
     public Vector3 playerMove;
+    public float cameraZDefault;
     
     
 
@@ -22,32 +23,36 @@ public class RoomChange : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    
 
+    void FixedUpdate()
+    {
+        
     }
 
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log(collision.gameObject.tag);
         if (collision.CompareTag("Player"))
         {
-            
+            Debug.Log("lol");
+            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);
             changeCameraSize();
             changeCameraPosition();
+            
             if(collision.gameObject.name == "Player1Sprite")
             {
                 collision.gameObject.transform.position += playerMove;
                 player2pos.transform.position = collision.gameObject.transform.position;
                 playerMove = -playerMove;
+                Invoke("changeDefault",1.0f);
             }
             else if (collision.gameObject.name == "Player2Sprite")
             {
                 collision.gameObject.transform.position += playerMove;
                 player1pos.transform.position = collision.gameObject.transform.position;
                 playerMove = -playerMove;
+                Invoke("changeDefault",1.0f);
             }
 
 
@@ -68,9 +73,14 @@ public class RoomChange : MonoBehaviour
     private void changeCameraPosition()
     {
         Vector3 temp = cam.transform.position;
-        cam.transform.position = roomTransform;
+        cam.transform.position = new Vector3(roomTransform.x,roomTransform.y,cam.transform.position.z);
         roomTransform = temp;
 
+    }
+
+    private void changeDefault()
+    {
+        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cameraZDefault);
     }
 
    
