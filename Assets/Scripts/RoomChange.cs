@@ -11,15 +11,16 @@ public class RoomChange : MonoBehaviour
     public Vector3 roomTransform;
     public Vector3 playerMove;
     public float cameraZDefault;
-    
-    
+    public AudioSource audio;
+
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,9 @@ public class RoomChange : MonoBehaviour
         {
             Debug.Log("lol");
             cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);
+
+            audio.Play();
+        
             changeCameraSize();
             changeCameraPosition();
             
