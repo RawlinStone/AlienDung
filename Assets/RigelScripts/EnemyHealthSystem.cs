@@ -14,6 +14,8 @@ public class EnemyHealthSystem : MonoBehaviour
     private float slowSpeed;
     private float speed;
 
+    public ParticleSystem splat;
+
     void Start()
     {
         movement = GetComponent<EnemyMovement>();
@@ -21,6 +23,8 @@ public class EnemyHealthSystem : MonoBehaviour
 
         slowSpeed = movement.speed / 2;
         speed = movement.speed;
+
+        splat.Stop();
     }
 
     void Update()
@@ -70,7 +74,13 @@ public class EnemyHealthSystem : MonoBehaviour
         if (health <= 0)
         {
             //enemy dies
+            Explode();
         }
+    }
+
+    void Explode()
+    {
+        splat.Play();
     }
 
     void EnemyDealDamage()
