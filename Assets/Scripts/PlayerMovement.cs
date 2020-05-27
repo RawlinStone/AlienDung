@@ -28,14 +28,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.parent.name == "Player1")
+        
+        if (transform.name == "Player1Sprite")
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
             
 
         }
-        if (transform.parent.name == "Player2")
+        if (transform.name == "Player2Sprite")
         {
             movement.x = Input.GetAxisRaw("Horizontal1");
             movement.y = Input.GetAxisRaw("Vertical1");

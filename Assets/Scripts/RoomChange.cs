@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class RoomChange : MonoBehaviour
 {
-    public Transform player1pos;
-    public Transform player2pos;
+    public GameObject player1pos;
+    public GameObject player2pos;
     public Camera cam;
     public float camSize;
     public Vector3 roomTransform;
     public Vector3 playerMove;
     public float cameraZDefault;
     public AudioSource audio;
+    
 
 
 
@@ -21,6 +22,7 @@ public class RoomChange : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -34,37 +36,38 @@ public class RoomChange : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+       if (collision.CompareTag("Player"))
         {
-            Debug.Log("lol");
-            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);
-
-            audio.Play();
-        
-            changeCameraSize();
-            changeCameraPosition();
+           Debug.Log(collision.gameObject.name);
+           audio.Play();
+           changeCameraSize();
+           changeCameraPosition();
             
-            if(collision.gameObject.name == "Player1Sprite")
-            {
-                collision.gameObject.transform.position += playerMove;
-                player2pos.transform.position = collision.gameObject.transform.position;
-                playerMove = -playerMove;
-                Invoke("changeDefault",1.0f);
-            }
-            else if (collision.gameObject.name == "Player2Sprite")
-            {
-                collision.gameObject.transform.position += playerMove;
-                player1pos.transform.position = collision.gameObject.transform.position;
-                playerMove = -playerMove;
-                Invoke("changeDefault",1.0f);
-            }
 
-
-
-
-
-
+            if (collision.gameObject.name == "Player1Sprite")
+               {
+                  player1pos.transform.position += playerMove;
+                  player2pos.transform.position = player1pos.transform.position;
+                  playerMove = -playerMove;
+                  Invoke("changeDefault", 1.0f);
+                    
+               }
+             else if (collision.gameObject.name == "Player2Sprite")
+                {
+                  player2pos.transform.position += playerMove;
+                  player1pos.transform.position = player2pos.transform.position;
+                  playerMove = -playerMove;
+                  Invoke("changeDefault", 1.0f);
+                    
+                }
         }
+
+
+
+
+
+
+        
     }
 
     private void changeCameraSize()
@@ -77,7 +80,7 @@ public class RoomChange : MonoBehaviour
     private void changeCameraPosition()
     {
         Vector3 temp = cam.transform.position;
-        cam.transform.position = new Vector3(roomTransform.x,roomTransform.y,cam.transform.position.z);
+        cam.transform.position = new Vector3(roomTransform.x,roomTransform.y, 0);
         roomTransform = temp;
 
     }
@@ -85,6 +88,7 @@ public class RoomChange : MonoBehaviour
     private void changeDefault()
     {
         cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cameraZDefault);
+       
     }
 
    
