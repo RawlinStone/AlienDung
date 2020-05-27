@@ -10,11 +10,12 @@ public class HeavyGunScript : MonoBehaviour
     public int ammo;
     public bool infiniteAmmo;
 
+    private HeavyGunChargingScript chargeAnim;
     private float timer = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        chargeAnim = transform.GetChild(0).GetComponent<HeavyGunChargingScript>();
     }
 
     // Update is called once per frame
@@ -25,18 +26,22 @@ public class HeavyGunScript : MonoBehaviour
         {
             if (timer < chargeTime)
             {
+                chargeAnim.ChargingGun(1);
                 timer += Time.deltaTime;
                 //Debug.Log("Charging");
             }
             else
             {
+                chargeAnim.ChargingGun(2);
                 //Debug.Log("done");
             }
         }
         else
         {
+            chargeAnim.ChargingGun(0);
             if (timer < chargeTime && timer > 0.0f)
             {
+                chargeAnim.ChargingGun(1);
                 timer -= Time.deltaTime;
             }
             if (timer >= chargeTime && ammo > 0)

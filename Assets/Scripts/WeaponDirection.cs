@@ -18,28 +18,28 @@ public class WeaponDirection : MonoBehaviour
             Input.GetAxisRaw("Vertical1") > 0 && gameObject.name == "Player2WeaponDirection"
             )
         {
-            transform.eulerAngles = new Vector3(0f,0f,90f);
+            transform.eulerAngles = new Vector3(0f,0f,0f);
         }
         else if (
             Input.GetAxisRaw("Vertical") < 0 && gameObject.name == "Player1WeaponDirection" ||
             Input.GetAxisRaw("Vertical1") < 0 && gameObject.name == "Player2WeaponDirection"
             )
         {
-            transform.eulerAngles = new Vector3(0f,0f,-90f);
+            transform.eulerAngles = new Vector3(0f,0f,180f);
         }
 
         if (Input.GetAxisRaw("Horizontal") < 0 && gameObject.name == "Player1WeaponDirection" ||
             Input.GetAxisRaw("Horizontal1") < 0 && gameObject.name == "Player2WeaponDirection"
             )
         {
-            transform.eulerAngles = new Vector3(0f,180f,0f);
+            transform.eulerAngles = new Vector3(0f,0f,90f);
         }
         else if (
             Input.GetAxisRaw("Horizontal") > 0 && gameObject.name == "Player1WeaponDirection" ||
             Input.GetAxisRaw("Horizontal1") > 0 && gameObject.name == "Player2WeaponDirection"
             )
         {
-            transform.eulerAngles = new Vector3(0f,0f,0f);
+            transform.eulerAngles = new Vector3(0f,0f,-90f);
         }
     }
 }
