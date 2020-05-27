@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2050009556483398960}
   - component: {fileID: 1283196806905932652}
   m_Layer: 0
-  m_Name: HeavyGunCharge (1)
+  m_Name: HeavyGunCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
