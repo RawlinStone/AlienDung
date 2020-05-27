@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyHealthSystem : MonoBehaviour
 {
     public int health;
-    public int damage;
 
     private EnemyMovement movement;
     public float slowTimer;
@@ -46,7 +45,7 @@ public class EnemyHealthSystem : MonoBehaviour
         }
     }
 
-    void EnemyTakeDamage(int damage)
+    public void EnemyTakeDamage(int damage)
     {
         health -= damage;
 
@@ -81,10 +80,5 @@ public class EnemyHealthSystem : MonoBehaviour
     void Explode()
     {
         splat.Play();
-    }
-
-    void EnemyDealDamage()
-    {
-
     }
 }
