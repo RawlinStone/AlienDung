@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeleeScript : MonoBehaviour
 {
     public float cooldown;
+    public int damage;
     private float timer = 0.0f;
     public float attackRange;
     private Animator anim;
@@ -40,9 +41,10 @@ public class MeleeScript : MonoBehaviour
         Collider2D[] attacked = Physics2D.OverlapCircleAll(transform.position, attackRange);
         foreach (var collide in attacked)
         {
-            if (collide.tag != "Player")
+            if (collide.tag == "Enemy")
             {
-                Debug.Log("deal damage");
+                // Debug.Log("deal damage");
+                collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
             }
         }
         //need to see how enemy takes damage before done

@@ -6,6 +6,7 @@ public class ExplosionScript : MonoBehaviour
 {
     public float range;
     public float despawnTime;
+    public int damage;
     private float timer = 0.0f;
 
     // Start is called before the first frame update
@@ -30,5 +31,9 @@ public class ExplosionScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collide)
     {
         //deal damage
+        if (collide.tag == "Enemy")
+        {
+            collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public float despawnTime;
     public bool explode;
     public GameObject explosion;
+    public int damage;
     private float timer = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -53,10 +54,13 @@ public class BulletScript : MonoBehaviour
             if (collide.tag == "Enemy")
             {
                 //Debug.Log("player");
-                collide.gameObject.GetComponent<HealthScript>().change(-1);
+                collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
                 Destroy(gameObject);
             }
-            //add damage script
+            else if (collide.tag == "Player")
+            {
+                //pass through players
+            }
             else
             {
                 Destroy(gameObject);
