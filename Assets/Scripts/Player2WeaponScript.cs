@@ -24,8 +24,11 @@ public class Player2WeaponScript : MonoBehaviour
             currentWeapon = (currentWeapon + 1) % 3;
 
             melee.SetActive(false);
+            melee.transform.rotation = Quaternion.LookRotation(-transform.forward,transform.up);
             gun.SetActive(false);
             heavyGun.SetActive(false);
+            heavyGun.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            heavyGun.GetComponent<HeavyGunScript>().reset();
 
             switch (currentWeapon)
             {
