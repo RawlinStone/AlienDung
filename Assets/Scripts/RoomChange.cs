@@ -12,7 +12,7 @@ public class RoomChange : MonoBehaviour
     public Vector3 playerMove;
     public float cameraZDefault;
     public AudioSource audio;
-    private bool transitionEnded;
+    
 
 
 
@@ -22,7 +22,7 @@ public class RoomChange : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        transitionEnded = true;
+        
     }
 
     // Update is called once per frame
@@ -36,28 +36,29 @@ public class RoomChange : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (transitionEnded) {
-            if (collision.CompareTag("Player"))
-            {
-                audio.Play();
-                changeCameraSize();
-                changeCameraPosition();
+       if (collision.CompareTag("Player"))
+        {
+           Debug.Log(collision.gameObject.name);
+           audio.Play();
+           changeCameraSize();
+           changeCameraPosition();
+            
 
-                if (collision.gameObject.name == "Player1Sprite")
+            if (collision.gameObject.name == "Player1Sprite")
+               {
+                  player1pos.transform.position += playerMove;
+                  player2pos.transform.position = player1pos.transform.position;
+                  playerMove = -playerMove;
+                  Invoke("changeDefault", 1.0f);
+                    
+               }
+             else if (collision.gameObject.name == "Player2Sprite")
                 {
-                    player1pos.transform.position += playerMove;
-                    player2pos.transform.position = player1pos.transform.position;
-                    playerMove = -playerMove;
-                    Invoke("changeDefault", 1.0f);
-                    transitionEnded = false;
-                }
-                else if (collision.gameObject.name == "Player2Sprite")
-                {
-                    player2pos.transform.position += playerMove;
-                    player1pos.transform.position = player2pos.transform.position;
-                    playerMove = -playerMove;
-                    Invoke("changeDefault", 1.0f);
-                    transitionEnded = false;
+                  player2pos.transform.position += playerMove;
+                  player1pos.transform.position = player2pos.transform.position;
+                  playerMove = -playerMove;
+                  Invoke("changeDefault", 1.0f);
+                    
                 }
         }
 
@@ -66,7 +67,7 @@ public class RoomChange : MonoBehaviour
 
 
 
-        }
+        
     }
 
     private void changeCameraSize()
@@ -79,7 +80,7 @@ public class RoomChange : MonoBehaviour
     private void changeCameraPosition()
     {
         Vector3 temp = cam.transform.position;
-        cam.transform.position = roomTransform;
+        cam.transform.position = new Vector3(roomTransform.x,roomTransform.y, 0);
         roomTransform = temp;
 
     }
@@ -87,7 +88,7 @@ public class RoomChange : MonoBehaviour
     private void changeDefault()
     {
         cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cameraZDefault);
-        transitionEnded = true;
+       
     }
 
    
