@@ -57,4 +57,9 @@ public class HeavyGunScript : MonoBehaviour
             }
         }
     }
+
+    public void reset()
+    {
+        timer = 0;
+    }
 }
