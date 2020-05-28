@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public bool hurt;
     public float hurtTime;
     private float hurtCounter;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,16 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             this.gameObject.SetActive(false);
+            if (this.gameObject.name == "Player1Sprite")
+            {
+                gm.player1Alive = false;
+            }
+            if (this.gameObject.name == "Player2Sprite")
+            {
+                gm.player2Alive = false;
+            }
+            
+                
         }
         if(hurt)
         {
