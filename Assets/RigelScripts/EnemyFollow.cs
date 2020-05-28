@@ -26,9 +26,9 @@ public class EnemyFollow : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        currentPlayer = collision.gameObject;
         if (collision.tag == "Player")
         {
+            currentPlayer = collision.gameObject;
             isFollow = true;
         }
     }
