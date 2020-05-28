@@ -28,12 +28,12 @@ public class HeavyGunScript : MonoBehaviour
             {
                 chargeAnim.ChargingGun(1);
                 timer += Time.deltaTime;
-                //Debug.Log("Charging");
+                Debug.Log("Charging");
             }
             else
             {
                 chargeAnim.ChargingGun(2);
-                //Debug.Log("done");
+                Debug.Log("done");
             }
         }
         else
@@ -56,5 +56,10 @@ public class HeavyGunScript : MonoBehaviour
                 projectile.GetComponent<Rigidbody2D>().velocity = (projectile.transform.position - transform.parent.parent.position) * bulletSpeed;
             }
         }
+    }
+
+    public void reset()
+    {
+        timer = 0;
     }
 }

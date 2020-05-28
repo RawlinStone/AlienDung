@@ -74,6 +74,8 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             //enemy dies
             Explode();
+
+            //enemy drops ammo
         }
     }
 

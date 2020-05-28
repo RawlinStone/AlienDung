@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
    
 
     //used to store position
-    Vector2 movement;
+    public Vector2 movement;
    
 
     // Start is called before the first frame update
