@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 2673446474934221033}
   - component: {fileID: 2673446474934221032}
   - component: {fileID: 2673446474934221031}
+  - component: {fileID: 1437048651160995963}
   m_Layer: 8
   m_Name: Player1Sprite
   m_TagString: Player
@@ -257,6 +258,7 @@ MonoBehaviour:
   animator: {fileID: 2673446474934221033}
   px: 0
   py: 0
+  movement: {x: 0, y: 0}
 --- !u!61 &2673446474934221031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -283,6 +285,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1437048651160995963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673446474934221030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f27e43b01a57d448a58652024b08f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  renderer: {fileID: 2673446474934221035}
+  hurt: 0
+  hurtTime: 2
+  gm: {fileID: 0}
 --- !u!1 &2673446475073898446
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2673446476321521917}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.3, y: -0.031, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalPosition: {x: 0.1, y: -0.031, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 2673446475412720531}
   m_RootOrder: 0
@@ -669,7 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.5
   damage: 0
-  attackRange: 0.8
+  attackRange: 1.5
 --- !u!95 &6629152854825787787
 Animator:
   serializedVersion: 3
