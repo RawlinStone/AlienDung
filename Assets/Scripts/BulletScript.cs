@@ -53,7 +53,7 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
-            //Debug.Log("hit");
+            Debug.Log("hit");
             //change enemy to whatever
             if (collide.isTrigger)
             {
@@ -69,7 +69,7 @@ public class BulletScript : MonoBehaviour
             {
                 //pass through players
             }
-            else if (collide.tag == "Turret")
+            else if (collide.CompareTag("Turret"))
             {
                 Debug.Log("Go Here");
                 collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);

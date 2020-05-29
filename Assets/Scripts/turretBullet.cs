@@ -10,7 +10,7 @@ public class turretBullet : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.tag == "Player")
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

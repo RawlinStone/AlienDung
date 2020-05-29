@@ -131,7 +131,8 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0}
   turretPosotion: {x: 0, y: 0}
   rb: {fileID: 4795713499423909340}
-  turretBullets: {fileID: 0}
+  turretBullets: {fileID: 57712936972307240, guid: e8604d7b120ffe84baa5214409ae3764,
+    type: 3}
   firePoint: {fileID: 4795713498865376111}
   ShootingForce: 8
   cooldownBullet: 2
@@ -234,5 +235,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  turretExplodes: {fileID: 545326105823419363, guid: 5722519f710f64c499313ecd476ddaa8,
+  turretExplodes: {fileID: 57712936972307240, guid: e8604d7b120ffe84baa5214409ae3764,
     type: 3}
