@@ -27,18 +27,20 @@ public class EnemyFollow : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        for (int i = 0; i < players.Length; i++)
+        if (collision.tag == "Player")
         {
-            float distance = players[i].transform.position.magnitude - currentEnemy.transform.position.magnitude;
-            Debug.Log(players[i].name + " " + distance);
-            Debug.Log(shortestDistance);
-            if (distance <= shortestDistance)
+            for (int i = 0; i < players.Length; i++)
             {
-                currentPlayer = players[i].gameObject;
-                isFollow = true;
+                float distance = players[i].transform.position.magnitude - currentEnemy.transform.position.magnitude;
+                Debug.Log(players[i].name + " " + distance);
+                Debug.Log(shortestDistance);
+                if (distance <= shortestDistance)
+                {
+                    currentPlayer = players[i].gameObject;
+                    isFollow = true;
+                }
             }
         }
-        
     }
 
     void OnTriggerExit2D(Collider2D collision)
