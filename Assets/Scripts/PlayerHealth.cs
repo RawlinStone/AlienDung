@@ -23,14 +23,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            this.gameObject.SetActive(false);
+            
             if (this.gameObject.name == "Player1Sprite")
             {
+
                 gm.player1Alive = false;
+                this.gameObject.SetActive(false);
             }
             if (this.gameObject.name == "Player2Sprite")
             {
                 gm.player2Alive = false;
+                this.gameObject.SetActive(false);
             }
             
                 

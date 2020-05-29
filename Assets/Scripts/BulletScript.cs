@@ -42,16 +42,23 @@ public class BulletScript : MonoBehaviour
     {
         if (explode)
         {
-            //Debug.Log("boom");
-            var boom = Instantiate(explosion);
-            boom.transform.position = transform.position;
-            Destroy(gameObject);
+            if (!collide.isTrigger)
+            {
+                //Debug.Log("boom");
+                var boom = Instantiate(explosion);
+                boom.transform.position = transform.position;
+                Destroy(gameObject);
+            }
         }
         else
         {
             //Debug.Log("hit");
             //change enemy to whatever
-            if (collide.tag == "Enemy")
+            if (collide.isTrigger)
+            {
+                //ignore triggers
+            }
+            else if (collide.tag == "Enemy")
             {
                 //Debug.Log("player");
                 collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
