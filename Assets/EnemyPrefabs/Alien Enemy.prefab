@@ -4996,7 +4996,6 @@ MonoBehaviour:
   isFollow: 0
   currentPlayer: {fileID: 0}
   currentEnemy: {fileID: 4421900235202446403}
-  shortestDistance: 0
 --- !u!1 &4421900235202446403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5015,7 +5014,7 @@ GameObject:
   - component: {fileID: 4421900235202446411}
   m_Layer: 0
   m_Name: Alien Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5102,7 +5101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followArea: {fileID: 4421900234368012766}
-  speed: 2
+  speed: 5
   walkDirection: 2
   anim: {fileID: 4421900235202446409}
   changeAttackPosition: {fileID: 4421900234082737405}
@@ -5140,18 +5139,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03124547, y: -0.3902378}
+  m_Offset: {x: 0.03124547, y: -0.095146894}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5154357, y: 0.39465523}
+  m_Size: {x: 0.5154357, y: 0.98483706}
   m_EdgeRadius: 0
 --- !u!95 &4421900235202446409
 Animator:
@@ -5184,7 +5183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812427db82492e641b1f22e783b65554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCoolDown: 5
+  attackCoolDown: 4
   damage: 25
   attackPosition: {fileID: 4421900234082737406}
   attackRange: 0.16

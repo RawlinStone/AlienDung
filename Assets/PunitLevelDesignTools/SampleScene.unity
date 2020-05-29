@@ -617,6 +617,36 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795713498865376111, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4795713499423909339, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -630,7 +660,7 @@ PrefabInstance:
     - target: {fileID: 4795713499423909339, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 4795713499423909339, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
         type: 3}
