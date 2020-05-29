@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4795713499423909339}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.054}
 --- !u!1 &4795713499423909342
 GameObject:
@@ -61,6 +61,7 @@ Transform:
   m_LocalPosition: {x: 2.2, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3396487543554363111}
   - {fileID: 4795713498865376111}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -172,3 +173,66 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.064753056}
   serializedVersion: 2
   m_Radius: 3.6423388
+--- !u!1 &8152034375294800300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3396487543554363111}
+  - component: {fileID: 8850188267401144272}
+  - component: {fileID: 4389990601608334028}
+  m_Layer: 0
+  m_Name: TurretHealth
+  m_TagString: Turret
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3396487543554363111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152034375294800300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: -0.18, z: -0.70913523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4795713499423909339}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8850188267401144272
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152034375294800300}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.024282932}
+  serializedVersion: 2
+  m_Radius: 0.52428293
+--- !u!114 &4389990601608334028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152034375294800300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa20058dd3173340846d6d92b5dfa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  turretExplodes: {fileID: 545326105823419363, guid: 5722519f710f64c499313ecd476ddaa8,
+    type: 3}
