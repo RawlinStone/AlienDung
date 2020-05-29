@@ -24,16 +24,19 @@ public class HeavyGunScript : MonoBehaviour
         if ((Input.GetButton("Fire1") && transform.parent.name == "Player1Weapon") || 
         (Input.GetButton("Fire2") && transform.parent.name == "Player2Weapon"))
         {
-            if (timer < chargeTime)
+            if (ammo > 0)
             {
-                chargeAnim.ChargingGun(1);
-                timer += Time.deltaTime;
-                Debug.Log("Charging");
-            }
-            else
-            {
-                chargeAnim.ChargingGun(2);
-                Debug.Log("done");
+                if (timer < chargeTime)
+                {
+                    chargeAnim.ChargingGun(1);
+                    timer += Time.deltaTime;
+                    //Debug.Log("Charging" + timer);
+                }
+                else
+                {
+                    chargeAnim.ChargingGun(2);
+                    //Debug.Log("done");
+                }
             }
         }
         else
