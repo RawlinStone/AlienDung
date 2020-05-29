@@ -28,12 +28,12 @@ public class HeavyGunScript : MonoBehaviour
             {
                 chargeAnim.ChargingGun(1);
                 timer += Time.deltaTime;
-                Debug.Log("Charging");
+                //Debug.Log("Charging" + timer);
             }
             else
             {
                 chargeAnim.ChargingGun(2);
-                Debug.Log("done");
+                //Debug.Log("done");
             }
         }
         else

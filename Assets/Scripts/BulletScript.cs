@@ -42,10 +42,13 @@ public class BulletScript : MonoBehaviour
     {
         if (explode)
         {
-            //Debug.Log("boom");
-            var boom = Instantiate(explosion);
-            boom.transform.position = transform.position;
-            Destroy(gameObject);
+            if (!collide.isTrigger)
+            {
+                //Debug.Log("boom");
+                var boom = Instantiate(explosion);
+                boom.transform.position = transform.position;
+                Destroy(gameObject);
+            }
         }
         else
         {
