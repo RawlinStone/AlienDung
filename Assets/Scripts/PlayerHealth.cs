@@ -10,12 +10,15 @@ public class PlayerHealth : MonoBehaviour
     public float hurtTime;
     private float hurtCounter;
     public GameManager gm;
+    public AudioSource audio;
+    
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
         hurt = false;
         renderer = GetComponent<SpriteRenderer>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +71,8 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         hurt = true;
         hurtCounter = hurtTime;
+        audio.Play();
+
         
     }
 

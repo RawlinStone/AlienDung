@@ -23871,6 +23871,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4521894162463932428, guid: d520f2fa5c1b1d242b79d1815336ff7b,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6646307121398109572, guid: d520f2fa5c1b1d242b79d1815336ff7b,
         type: 3}
       propertyPath: gm
