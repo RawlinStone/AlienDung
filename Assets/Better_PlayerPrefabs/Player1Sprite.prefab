@@ -301,6 +301,7 @@ MonoBehaviour:
   renderer: {fileID: 2673446474934221035}
   hurt: 0
   hurtTime: 2
+  gm: {fileID: 0}
 --- !u!1 &2673446475073898446
 GameObject:
   m_ObjectHideFlags: 0
