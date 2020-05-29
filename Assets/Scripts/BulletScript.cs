@@ -71,7 +71,7 @@ public class BulletScript : MonoBehaviour
             }
             else if (collide.CompareTag("Turret"))
             {
-                Debug.Log("Go Here");
+               
                 collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
                 Destroy(gameObject);
             }
