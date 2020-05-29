@@ -74,6 +74,7 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             //enemy dies
             Explode();
+            Destroy(this.gameObject);
 
             //enemy drops ammo
         }
@@ -81,6 +82,7 @@ public class EnemyHealthSystem : MonoBehaviour
 
     void Explode()
     {
+        splat.transform.parent = null;
         splat.Play();
     }
 }
