@@ -40,6 +40,7 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collide)
     {
+        
         if (explode)
         {
             if (!collide.isTrigger)
@@ -67,6 +68,12 @@ public class BulletScript : MonoBehaviour
             else if (collide.tag == "Player")
             {
                 //pass through players
+            }
+            else if (collide.tag == "Turret")
+            {
+                Debug.Log("Go Here");
+                collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
+                Destroy(gameObject);
             }
             else
             {

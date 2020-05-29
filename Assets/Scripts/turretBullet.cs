@@ -13,7 +13,7 @@ public class turretBullet : MonoBehaviour
         Debug.Log("Hit");
         if(collision.gameObject.tag == "Player")
         {
-            GameObject effect = Instantiate(hitEffect, transform.position,Quaternion.identity);
+            GameObject effect = Instantiate(hitEffect);
             collision.gameObject.GetComponent<PlayerHealth>().PlayerTakeDamage(damage);
             Destroy(effect, 5f);
             Destroy(gameObject);

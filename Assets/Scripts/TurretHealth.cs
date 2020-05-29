@@ -6,6 +6,7 @@ public class TurretHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public int health;
+    public GameObject turretExplodes;
     void Start()
     {
         health = 50;
@@ -14,6 +15,15 @@ public class TurretHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(health <= 0)
+        {
+            
+            Destroy(gameObject);
+        }
+    }
+
+    public void TurretTakesDamage(int damage)
+    {
+        health -= damage;
     }
 }

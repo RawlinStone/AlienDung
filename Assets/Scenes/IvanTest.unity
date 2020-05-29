@@ -346,5 +346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 4795713499423909342, guid: 8bcbe32a86bbb0040a202bf461c9fcbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcbe32a86bbb0040a202bf461c9fcbb, type: 3}
