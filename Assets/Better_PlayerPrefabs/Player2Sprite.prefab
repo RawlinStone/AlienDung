@@ -256,7 +256,7 @@ MonoBehaviour:
   chargeTime: 2
   bulletSpeed: 5
   bullet: {fileID: 8960721493061716609, guid: f20d938497bb7bb46a80093a79b5fee4, type: 3}
-  ammo: 3
+  ammoUse: 3
   infiniteAmmo: 0
 --- !u!1 &2088813180072844377
 GameObject:
@@ -305,7 +305,7 @@ MonoBehaviour:
   bullet: {fileID: 8767765097515159151, guid: 57eeaf7b6df72e7408ff4be10cce38a8, type: 3}
   bulletSpeed: 10
   cooldown: 0.5
-  ammo: 10
+  ammoUse: 1
   infiniteAmmo: 0
 --- !u!212 &2088813180072844375
 SpriteRenderer:
@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 2088813180184529897}
   - component: {fileID: 2088813180184529898}
   - component: {fileID: 6646307121398109572}
+  - component: {fileID: 8749706164699470854}
   m_Layer: 8
   m_Name: Player2Sprite
   m_TagString: Player
@@ -545,6 +546,19 @@ MonoBehaviour:
   hurt: 0
   hurtTime: 2
   gm: {fileID: 0}
+--- !u!114 &8749706164699470854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088813180184529899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f4ac872efc854eaafa7221d7d418d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 20
 --- !u!1 &2088813180693087972
 GameObject:
   m_ObjectHideFlags: 0
