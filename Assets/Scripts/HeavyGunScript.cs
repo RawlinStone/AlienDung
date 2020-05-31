@@ -7,8 +7,9 @@ public class HeavyGunScript : MonoBehaviour
     public float chargeTime;
     public float bulletSpeed;
     public GameObject bullet;
-    public int ammo;
+    public int ammoUse;
     public bool infiniteAmmo;
+    private PlayerAmmoScript ammo;
 
     private HeavyGunChargingScript chargeAnim;
     private float timer = 0.0f;
@@ -16,6 +17,7 @@ public class HeavyGunScript : MonoBehaviour
     void Start()
     {
         chargeAnim = transform.GetChild(0).GetComponent<HeavyGunChargingScript>();
+        ammo = transform.parent.parent.parent.GetComponent<PlayerAmmoScript>();
     }
 
     // Update is called once per frame
@@ -24,16 +26,19 @@ public class HeavyGunScript : MonoBehaviour
         if ((Input.GetButton("Fire1") && transform.parent.name == "Player1Weapon") || 
         (Input.GetButton("Fire2") && transform.parent.name == "Player2Weapon"))
         {
-            if (timer < chargeTime)
+            if (ammo.canShoot(ammoUse))
             {
-                chargeAnim.ChargingGun(1);
-                timer += Time.deltaTime;
-                Debug.Log("Charging");
-            }
-            else
-            {
-                chargeAnim.ChargingGun(2);
-                Debug.Log("done");
+                if (timer < chargeTime)
+                {
+                    chargeAnim.ChargingGun(1);
+                    timer += Time.deltaTime;
+                    //Debug.Log("Charging" + timer);
+                }
+                else
+                {
+                    chargeAnim.ChargingGun(2);
+                    //Debug.Log("done");
+                }
             }
         }
         else
@@ -44,11 +49,11 @@ public class HeavyGunScript : MonoBehaviour
                 chargeAnim.ChargingGun(1);
                 timer -= Time.deltaTime;
             }
-            if (timer >= chargeTime && ammo > 0)
+            if (timer >= chargeTime && ammo.canShoot(ammoUse))
             {
                 if (!infiniteAmmo)
                 {
-                    ammo--;
+                    ammo.changeAmmo(-ammoUse);
                 }
                 timer = 0.0f;
                 var projectile = Instantiate(bullet);

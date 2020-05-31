@@ -10,12 +10,15 @@ public class PlayerHealth : MonoBehaviour
     public float hurtTime;
     private float hurtCounter;
     public GameManager gm;
+    public AudioSource audio;
+    
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
         hurt = false;
         renderer = GetComponent<SpriteRenderer>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,14 +26,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            this.gameObject.SetActive(false);
+            
             if (this.gameObject.name == "Player1Sprite")
             {
+
                 gm.player1Alive = false;
+                this.gameObject.SetActive(false);
             }
             if (this.gameObject.name == "Player2Sprite")
             {
                 gm.player2Alive = false;
+                this.gameObject.SetActive(false);
             }
             
                 
@@ -65,8 +71,24 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         hurt = true;
         hurtCounter = hurtTime;
+        audio.Play();
+
         
     }
 
-    
+    public void PlayerGainHealth(int healthGain)
+    {
+        int temp = health;
+        temp += healthGain;
+        if(temp > 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += healthGain;
+        }
+    }
+
+
 }

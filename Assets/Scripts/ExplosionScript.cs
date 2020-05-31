@@ -35,5 +35,9 @@ public class ExplosionScript : MonoBehaviour
         {
             collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
         }
+        else if(collide.CompareTag("Turret"))
+        {
+            collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
+        }
     }
 }

@@ -46,13 +46,18 @@ public class MeleeScript : MonoBehaviour
                 // Debug.Log("deal damage");
                 collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
             }
-        }
-        //need to see how enemy takes damage before done
-    }
+            else if (collide.CompareTag("Turret"))
+            {
+                collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+            }
+            //need to see how enemy takes damage before done
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
     }
 }
