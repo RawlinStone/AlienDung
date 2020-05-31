@@ -17,7 +17,15 @@ public class PickUpItems : MonoBehaviour
             }
             else if (currentObject == pickUpObject.Health)
             {
-                //call health function
+                if(collision.GetComponent<PlayerHealth>().health >= 100)
+                {
+                    //do nothing
+                }
+                else
+                {
+                    collision.GetComponent<PlayerHealth>().PlayerGainHealth(RandomQuantity());
+                }
+                
             }
             Destroy(this.gameObject);
         }

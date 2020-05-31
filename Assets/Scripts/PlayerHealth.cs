@@ -76,5 +76,19 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    
+    public void PlayerGainHealth(int healthGain)
+    {
+        int temp = health;
+        temp += healthGain;
+        if(temp > 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += healthGain;
+        }
+    }
+
+
 }
