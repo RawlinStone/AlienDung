@@ -19,7 +19,17 @@ public class PlayerAmmoScript : MonoBehaviour
 
     public void changeAmmo(int change)
     {
-        ammo += change;
+        int temp = ammo;
+        temp += change;
+        if(temp <= 0)
+        {
+            ammo = 0; 
+        }
+        else
+        {
+            ammo += change;
+        }
+        
     }
 
     public bool canShoot(int amount)
