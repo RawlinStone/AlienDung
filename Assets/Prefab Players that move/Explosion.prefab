@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 30
   despawnTime: 0.5
+  damage: 100
 --- !u!95 &1781510006081205030
 Animator:
   serializedVersion: 3

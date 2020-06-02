@@ -44,6 +44,7 @@ public class EnemySlashAttack : MonoBehaviour
                     //do damage
                     Debug.Log("player attacked");
                     playersToDamage[i].GetComponent<PlayerHealth>().PlayerTakeDamage(damage);
+
                 }
                 //play animation
                 if (movement.walkDirection == 0)

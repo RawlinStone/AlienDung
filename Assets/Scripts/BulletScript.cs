@@ -40,6 +40,7 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collide)
     {
+        
         if (explode)
         {
             if (!collide.isTrigger)
@@ -52,7 +53,7 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
-            //Debug.Log("hit");
+            Debug.Log("hit");
             //change enemy to whatever
             if (collide.isTrigger)
             {
@@ -67,6 +68,21 @@ public class BulletScript : MonoBehaviour
             else if (collide.tag == "Player")
             {
                 //pass through players
+            }
+            else if (collide.CompareTag("Turret"))
+            {
+               
+                collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
+                Destroy(gameObject);
+            }
+            else if (collide.CompareTag("BallEnemy"))
+            {
+                Destroy(gameObject);
+            }
+            else if (collide.CompareTag("FireEnemy"))
+            {
+                collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
+                Destroy(gameObject);
             }
             else
             {
