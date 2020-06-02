@@ -11,12 +11,14 @@ public class PlayerHealth : MonoBehaviour
     private float hurtCounter;
     public GameManager gm;
     public AudioSource audio;
+    public bool immune;
     
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
         hurt = false;
+        immune = false;
         renderer = GetComponent<SpriteRenderer>();
         audio = GetComponent<AudioSource>();
     }
@@ -59,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
             else
             {
                 renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1f);
+                immune = false;
                 hurt = false;
             }
             hurtCounter -= Time.deltaTime;
@@ -68,10 +71,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
-        health -= damage;
-        hurt = true;
-        hurtCounter = hurtTime;
-        audio.Play();
+        if (immune)
+        {
+            //Do nothing
+        }
+        else if (!immune)
+        {
+            health -= damage;
+            hurt = true;
+            hurtCounter = hurtTime;
+            audio.Play();
+            immune = true;
+        }
+        
 
         
     }

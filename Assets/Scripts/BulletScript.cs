@@ -75,6 +75,15 @@ public class BulletScript : MonoBehaviour
                 collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
                 Destroy(gameObject);
             }
+            else if (collide.CompareTag("BallEnemy"))
+            {
+                Destroy(gameObject);
+            }
+            else if (collide.CompareTag("FireEnemy"))
+            {
+                collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
+                Destroy(gameObject);
+            }
             else
             {
                 Destroy(gameObject);

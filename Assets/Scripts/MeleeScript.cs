@@ -51,6 +51,14 @@ public class MeleeScript : MonoBehaviour
                 collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
 
             }
+            else if (collide.CompareTag("BallEnemy"))
+            {
+                collide.GetComponent<EnemyBallHealth>().BallTakeDamage(damage); 
+            }
+            else if (collide.CompareTag("FireEnemy"))
+            {
+                collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage); 
+            }
             //need to see how enemy takes damage before done
         }
 
