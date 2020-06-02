@@ -10,6 +10,7 @@ public class HeavyGunScript : MonoBehaviour
     public int ammoUse;
     public bool infiniteAmmo;
     private PlayerAmmoScript ammo;
+    private AudioSource audiosource;
 
     private HeavyGunChargingScript chargeAnim;
     private float timer = 0.0f;
@@ -18,6 +19,7 @@ public class HeavyGunScript : MonoBehaviour
     {
         chargeAnim = transform.GetChild(0).GetComponent<HeavyGunChargingScript>();
         ammo = transform.parent.parent.parent.GetComponent<PlayerAmmoScript>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ public class HeavyGunScript : MonoBehaviour
                 {
                     ammo.changeAmmo(-ammoUse);
                 }
+                audiosource.Play();
                 timer = 0.0f;
                 var projectile = Instantiate(bullet);
                 projectile.transform.position = transform.position;

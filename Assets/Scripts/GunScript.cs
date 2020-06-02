@@ -8,6 +8,9 @@ public class GunScript : MonoBehaviour
     public float bulletSpeed;
     public float cooldown;
     public int ammoUse;
+    public AudioClip[] soundeffects;
+    private AudioSource audiosource;
+
     private PlayerAmmoScript ammo;
     public bool infiniteAmmo;
     private float timer = 0.0f;
@@ -15,6 +18,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         ammo = transform.parent.parent.parent.GetComponent<PlayerAmmoScript>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class GunScript : MonoBehaviour
                 {
                     ammo.changeAmmo(-ammoUse);
                 }
+                audiosource.PlayOneShot(soundeffects[Random.Range(0, soundeffects.Length)]) ;
                 var projectile = Instantiate(bullet);
                 projectile.transform.position = transform.position;
                 projectile.transform.rotation = transform.rotation; 
