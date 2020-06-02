@@ -6,6 +6,7 @@ public class MeleeScript : MonoBehaviour
 {
     public float cooldown;
     public int damage;
+    private AudioSource audiosource;
     private float timer = 0.0f;
     public float attackRange;
     private Animator anim;
@@ -13,6 +14,7 @@ public class MeleeScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class MeleeScript : MonoBehaviour
         {
             if (timer <= 0.0)
             {
+                audiosource.Play();
                 timer = cooldown;
                 anim.SetBool("attack", true);
                 Attack();

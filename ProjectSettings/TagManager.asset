@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - Turret
   - BallEnemy
+  - FireEnemy
   layers:
   - Default
   - TransparentFX
