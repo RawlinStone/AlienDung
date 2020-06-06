@@ -23,7 +23,8 @@ public class FireEnemyMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, placesMove[randomSpot].position, speed * Time.deltaTime);
-        Instantiate(lava,this.transform.position,Quaternion.identity);
+        Vector3 temp = new Vector3(this.transform.position.x, this.transform.position.y, -6);
+        Instantiate(lava,temp,Quaternion.identity);
         if(Vector3.Distance(transform.position,placesMove[randomSpot].position) < 0.2f)
         {
             if(waitTime <= 0)
