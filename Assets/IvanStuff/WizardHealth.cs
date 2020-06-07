@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBallHealth : MonoBehaviour
+public class WizardHealth : MonoBehaviour
 {
     public int health;
-    public GameObject playerDies;
+    public GameObject wizardDeath;
     public GameObject[] dropObjects;
     private GameObject[] players;
     // Start is called before the first frame update
     void Start()
     {
-        health = 25;
         players = GameObject.FindGameObjectsWithTag("Player");
-        
     }
 
     // Update is called once per frame
@@ -21,9 +19,10 @@ public class EnemyBallHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
-            GameObject t = Instantiate(playerDies, this.transform.position, this.transform.rotation);
-            Destroy(t,2f);
+            //play particle despawn
+            GameObject t = Instantiate(wizardDeath,this.transform.position, this.transform.rotation);
+            Destroy(t, 2f);
+           
             bool flag = false;
             for (int i = 0; i < players.Length; i++)
             {
@@ -63,10 +62,9 @@ public class EnemyBallHealth : MonoBehaviour
                     //drop nothing
                 }
             }
-            //play some particle
+            Destroy(gameObject);
         }
     }
-
 
     public int RandomDrop()
     {
@@ -74,8 +72,9 @@ public class EnemyBallHealth : MonoBehaviour
         return count;
     }
 
-    public void BallTakeDamage(int damage)
+    public void WizardEnemyTakeDamage(int damage)
     {
-        health -= damage; 
+        health -= damage;
     }
+
 }

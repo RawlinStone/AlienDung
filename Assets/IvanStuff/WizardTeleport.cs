@@ -6,6 +6,7 @@ public class WizardTeleport : MonoBehaviour
 {
     public Transform[] teleport;
     private int randomSpot;
+    public GameObject teleportParticles;
     // Start is called before the first frame update
     
     void Start()
@@ -23,9 +24,20 @@ public class WizardTeleport : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //play particle
-            transform.position = new Vector3(teleport[randomSpot].transform.position.x, teleport[randomSpot].transform.position.y, teleport[randomSpot].transform.position.z);
-            randomSpot = Random.Range(0, teleport.Length); 
+            GameObject effect1 = Instantiate(teleportParticles, this.transform.position, this.transform.rotation);
+           
+            this.transform.parent.position = new Vector3(teleport[randomSpot].transform.position.x, teleport[randomSpot].transform.position.y, teleport[randomSpot].transform.position.z);
+            
+            GameObject effect2 = Instantiate(teleportParticles, this.transform.position, this.transform.rotation);
+            int current = randomSpot;
+            while(current == randomSpot)
+            {
+                randomSpot = Random.Range(0, teleport.Length);
+            }
+            
+            Destroy(effect1, 2f);
+            Destroy(effect2, 2f);
+
         }
     }
 }

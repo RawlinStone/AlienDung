@@ -31,10 +31,10 @@ public class miniBlackMovement : MonoBehaviour
         {
             
             float dist = (t.transform.position - this.transform.position).sqrMagnitude;
-            Debug.Log(dist);
+            
             if(dist < distancePlayer)
             {
-                Debug.Log("Its lower");
+                
                 closestPlayer = new Vector3(t.transform.position.x,t.transform.position.y,t.transform.position.z);
                 distancePlayer = dist;
             }

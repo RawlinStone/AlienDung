@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3586211314434399779}
   - component: {fileID: 3586211314434399807}
   - component: {fileID: 6062584693301217975}
+  - component: {fileID: 6232227226000798606}
   m_Layer: 0
   m_Name: miniBlackHole
-  m_TagString: Untagged
+  m_TagString: BlackH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,4 +131,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  despawnTime: 10
+  despawnTime: 3
+--- !u!114 &6232227226000798606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3586211314434399804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12805460c9b57c04a8ff750b962a35ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25

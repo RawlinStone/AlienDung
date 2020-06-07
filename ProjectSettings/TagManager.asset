@@ -12,6 +12,8 @@ TagManager:
   - FireEnemy
   - BlackH
   - Wizard
+  - Bullet
+  - Explosion
   layers:
   - Default
   - TransparentFX

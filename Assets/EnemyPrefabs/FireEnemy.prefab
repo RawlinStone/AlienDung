@@ -136,6 +136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  deadParticle: {fileID: 3990357625377620207, guid: 6051761c72a2d5844a963a1bdcdf23f5,
+    type: 3}
+  dropObjects:
+  - {fileID: 4616109028171349568, guid: 0d132884017479540be73289d2d43026, type: 3}
+  - {fileID: 7029891021044162183, guid: 1d6001136fae18740aa25ba9c9b87a48, type: 3}
 --- !u!58 &413286039263486992
 CircleCollider2D:
   m_ObjectHideFlags: 0

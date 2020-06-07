@@ -16,7 +16,7 @@ public class BlackHole : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        target = new Vector3(ene.transform.position.x, ene.transform.position.y, 0);
+       
     }
     //used to initialize game before it starts
     void Awake()
@@ -27,7 +27,7 @@ public class BlackHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        target =  new Vector3(this.gameObject.transform.parent.position.x, this.gameObject.transform.parent.position.y,0);
         timeCounter += Time.deltaTime * speed;
         float x = Mathf.Cos(timeCounter) * width;
         float y = Mathf.Sin(timeCounter) * height;
