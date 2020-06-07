@@ -9,10 +9,12 @@ public class TurretHealth : MonoBehaviour
     public GameObject turretExplodes;
     public GameObject[] dropObjects;
     private GameObject[] players;
+    public AudioSource audio;
     void Start()
     {
         health = 50;
         players = GameObject.FindGameObjectsWithTag("Player");
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,6 +75,7 @@ public class TurretHealth : MonoBehaviour
 
     public void TurretTakesDamage(int damage)
     {
+        audio.Play();
         health -= damage;
     }
 }

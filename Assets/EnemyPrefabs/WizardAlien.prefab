@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCounter: 0
-  speed: 1
+  speed: 5
   width: 2
   height: 2
   ene: {fileID: 2419784420510192449}
