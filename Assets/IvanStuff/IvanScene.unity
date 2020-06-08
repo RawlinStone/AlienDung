@@ -432,6 +432,122 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98da60b43d4dd94285da3a96758f92d, type: 3}
+--- !u!1001 &1394100632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 413286039263486992, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.084
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263486993, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263487466, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: m_Name
+      value: FireEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 413286039263487468, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: placesMove.Array.data[0]
+      value: 
+      objectReference: {fileID: 667158820}
+    - target: {fileID: 413286039263487468, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: placesMove.Array.data[1]
+      value: 
+      objectReference: {fileID: 436766844}
+    - target: {fileID: 413286039263487468, guid: 86b2b92777a6fac428ea636a4ca483e1,
+        type: 3}
+      propertyPath: placesMove.Array.data[2]
+      value: 
+      objectReference: {fileID: 410258865}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86b2b92777a6fac428ea636a4ca483e1, type: 3}
+--- !u!1 &2043811898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 413286039263487466, guid: 86b2b92777a6fac428ea636a4ca483e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1394100632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2043811905
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043811898}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &2419784421929374273
 PrefabInstance:
   m_ObjectHideFlags: 0
