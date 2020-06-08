@@ -17,9 +17,12 @@ public class EnemyHealthSystem : MonoBehaviour
 
     public GameObject[] dropObjects;
     private GameObject[] players;
+    public AudioSource audio;
+    public GameManager gm;
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         movement = GetComponent<EnemyMovement>();
         timer = slowTimer;
 
@@ -52,6 +55,7 @@ public class EnemyHealthSystem : MonoBehaviour
 
     public void EnemyTakeDamage(int damage)
     {
+        audio.Play();
         health -= damage;
 
         //slow the speed down
@@ -78,6 +82,7 @@ public class EnemyHealthSystem : MonoBehaviour
         if (health <= 0)
         {
             //enemy dies
+            gm.totalEnemies -= 1;
             Explode();
 
             //drop ammo or health

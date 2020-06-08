@@ -9,6 +9,7 @@ public class ExplosionScript : MonoBehaviour
     public int damage;
     private float timer = 0.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,20 +29,36 @@ public class ExplosionScript : MonoBehaviour
         }
     }
 
+   
+    
+
     void OnTriggerEnter2D(Collider2D collide)
     {
         //deal damage
+        Debug.Log(collide.tag);
         if (collide.tag == "Enemy")
         {
             collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
         }
         else if(collide.CompareTag("Turret"))
         {
+            Debug.Log("Turret");
             collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
         }
         else if (collide.CompareTag("FireEnemy"))
         {
             collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
         }
+        else if (collide.CompareTag("Wizard"))
+        {
+            Debug.Log("wizard");
+            collide.GetComponent<WizardHealth>().WizardEnemyTakeDamage(damage);
+        }
+        else if (collide.CompareTag("BlackH"))
+        {
+            Debug.Log("Explosion Script");
+            Destroy(gameObject);
+        }
+        
     }
 }

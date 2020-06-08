@@ -8,6 +8,12 @@ TagManager:
   - Weapon
   - Turret
   - BallEnemy
+  - Lava
+  - FireEnemy
+  - BlackH
+  - Wizard
+  - Bullet
+  - Explosion
   layers:
   - Default
   - TransparentFX

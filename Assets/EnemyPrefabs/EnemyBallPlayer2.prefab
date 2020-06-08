@@ -148,5 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e38e5dfcac1fdc47901ab7ea22b7989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  playerDies: {fileID: 0}
+  health: 25
+  playerDies: {fileID: 2898706303614950490, guid: 0d09b8c2e3fe6c84c8d185c54aea6407,
+    type: 3}
+  dropObjects:
+  - {fileID: 4616109028171349568, guid: 0d132884017479540be73289d2d43026, type: 3}
+  - {fileID: 7029891021044162183, guid: 1d6001136fae18740aa25ba9c9b87a48, type: 3}

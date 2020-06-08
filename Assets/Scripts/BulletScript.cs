@@ -45,10 +45,21 @@ public class BulletScript : MonoBehaviour
         {
             if (!collide.isTrigger)
             {
-                //Debug.Log("boom");
-                var boom = Instantiate(explosion);
-                boom.transform.position = transform.position;
-                Destroy(gameObject);
+                if (collide.gameObject.CompareTag("BlackH"))
+                {
+                    collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
+                    Destroy(gameObject);
+                   
+                }
+              
+                else
+                {
+                    Debug.Log("boom");
+                    var boom = Instantiate(explosion);
+                    boom.transform.position = transform.position;
+                    Destroy(gameObject);
+                }
+               
             }
         }
         else
@@ -82,6 +93,17 @@ public class BulletScript : MonoBehaviour
             else if (collide.CompareTag("FireEnemy"))
             {
                 collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
+                Destroy(gameObject);
+            }
+            else if (collide.gameObject.CompareTag("BlackH"))
+            {
+                collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
+                Destroy(gameObject);
+                
+            }
+            else if (collide.gameObject.CompareTag("Wizard"))
+            {
+                collide.gameObject.GetComponent<WizardHealth>().WizardEnemyTakeDamage(damage);
                 Destroy(gameObject);
             }
             else
