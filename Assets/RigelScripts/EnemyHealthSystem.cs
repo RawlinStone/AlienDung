@@ -18,6 +18,7 @@ public class EnemyHealthSystem : MonoBehaviour
     public GameObject[] dropObjects;
     private GameObject[] players;
     public AudioSource audio;
+    public GameManager gm;
 
     void Start()
     {
@@ -81,6 +82,7 @@ public class EnemyHealthSystem : MonoBehaviour
         if (health <= 0)
         {
             //enemy dies
+            gm.totalEnemies -= 1;
             Explode();
 
             //drop ammo or health
