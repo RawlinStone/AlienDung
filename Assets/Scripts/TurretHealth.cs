@@ -16,6 +16,7 @@ public class TurretHealth : MonoBehaviour
         health = 50;
         players = GameObject.FindGameObjectsWithTag("Player");
         audio = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
