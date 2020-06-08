@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool player1Alive;
     public bool player2Alive;
     public GameObject panel;
+    public int totalEnemies;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
         if(!player1Alive && !player2Alive)
         {
             panel.SetActive(true);
+        }
+        if(totalEnemies <= 0)
+        {
+            //set the closed door inactive
+            //set open door active
         }
     }
 
