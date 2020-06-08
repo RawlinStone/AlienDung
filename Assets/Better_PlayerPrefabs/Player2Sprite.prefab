@@ -257,7 +257,7 @@ MonoBehaviour:
   chargeTime: 2
   bulletSpeed: 5
   bullet: {fileID: 8960721493061716609, guid: f20d938497bb7bb46a80093a79b5fee4, type: 3}
-  ammoUse: 3
+  ammoUse: 2
   infiniteAmmo: 0
 --- !u!82 &112489704615069842
 AudioSource:
