@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public GameManager gm;
     public AudioSource audio;
     public bool immune;
-    
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
         else if (!immune)
         {
             health -= damage;
+            healthBar.SetHealth(health);
             hurt = true;
             hurtCounter = hurtTime;
             audio.Play();
