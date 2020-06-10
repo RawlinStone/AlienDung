@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16debaa115abd8249a55b816930c6240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   player: {fileID: 0}
+  p1: 1
+  p2: 0
 --- !u!50 &8466344948601720751
 Rigidbody2D:
   serializedVersion: 4
@@ -154,3 +156,4 @@ MonoBehaviour:
   dropObjects:
   - {fileID: 4616109028171349568, guid: 0d132884017479540be73289d2d43026, type: 3}
   - {fileID: 7029891021044162183, guid: 1d6001136fae18740aa25ba9c9b87a48, type: 3}
+  gm: {fileID: 2495149902795490234, guid: 87cc76a088bc0f049ba7bcc5697b2706, type: 3}

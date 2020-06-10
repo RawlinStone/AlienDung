@@ -241,6 +241,8 @@ MonoBehaviour:
   dropObjects:
   - {fileID: 4616109028171349568, guid: 0d132884017479540be73289d2d43026, type: 3}
   - {fileID: 7029891021044162183, guid: 1d6001136fae18740aa25ba9c9b87a48, type: 3}
+  audio: {fileID: 0}
+  gm: {fileID: 2495149902795490234, guid: 87cc76a088bc0f049ba7bcc5697b2706, type: 3}
 --- !u!82 &7122830805754981267
 AudioSource:
   m_ObjectHideFlags: 0
