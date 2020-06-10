@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2634113a4bd9f9d47bfa9517ef39876c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 30
+  range: 0
   despawnTime: 0.5
   damage: 100
 --- !u!95 &1781510006081205030

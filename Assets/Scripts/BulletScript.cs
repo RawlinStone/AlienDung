@@ -40,76 +40,111 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collide)
     {
-        
-        if (explode)
+        if (collide.isTrigger)
         {
-            if (!collide.isTrigger)
-            {
-                if (collide.gameObject.CompareTag("BlackH"))
-                {
-                    collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
-                    Destroy(gameObject);
-                   
-                }
-              
-                else
-                {
-                    Debug.Log("boom");
-                    var boom = Instantiate(explosion);
-                    boom.transform.position = transform.position;
-                    Destroy(gameObject);
-                }
-               
-            }
+            //ignore triggers
         }
-        else
+        else if (collide.gameObject.CompareTag("BlackH"))
         {
-            Debug.Log("hit");
-            //change enemy to whatever
-            if (collide.isTrigger)
+            collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
+            Destroy(gameObject);
+        }
+
+        //change enemy to whatever
+        else if (collide.tag == "Enemy")
+        {
+            if (explode)
             {
-                //ignore triggers
+                spawnExplosion();
             }
-            else if (collide.tag == "Enemy")
+            else
             {
                 //Debug.Log("player");
                 collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
                 Destroy(gameObject);
             }
-            else if (collide.tag == "Player")
+        }
+        else if (collide.tag == "Player")
+        {
+            //pass through players
+        }
+        else if (collide.CompareTag("Turret"))
+        {
+            if (explode)
             {
-                //pass through players
+                spawnExplosion();
             }
-            else if (collide.CompareTag("Turret"))
+            else
             {
-               
                 collide.GetComponent<TurretHealth>().TurretTakesDamage(damage);
                 Destroy(gameObject);
             }
-            else if (collide.CompareTag("BallEnemy"))
+        }
+        else if (collide.CompareTag("BallEnemy"))
+        {
+            if (explode)
             {
-                Destroy(gameObject);
-            }
-            else if (collide.CompareTag("FireEnemy"))
-            {
-                collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
-                Destroy(gameObject);
-            }
-            else if (collide.gameObject.CompareTag("BlackH"))
-            {
-                collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
-                Destroy(gameObject);
-                
-            }
-            else if (collide.gameObject.CompareTag("Wizard"))
-            {
-                collide.gameObject.GetComponent<WizardHealth>().WizardEnemyTakeDamage(damage);
-                Destroy(gameObject);
+                spawnExplosion();
             }
             else
             {
                 Destroy(gameObject);
             }
         }
+        else if (collide.CompareTag("FireEnemy"))
+        {
+            if (explode)
+            {
+                spawnExplosion();
+            }
+            else
+            {
+                collide.GetComponent<FireEnemyHealth>().EnemyFireBallDamage(damage);
+                Destroy(gameObject);
+            }
+        }
+        else if (collide.gameObject.CompareTag("BlackH"))
+        {
+            if (explode)
+            {
+                spawnExplosion();
+            }
+            else
+            {
+                collide.gameObject.GetComponent<BlackHoleEats>().spawnMini();
+                Destroy(gameObject);
+            }
+        }
+        else if (collide.gameObject.CompareTag("Wizard"))
+        {
+            if (explode)
+            {
+                spawnExplosion();
+            }
+            else
+            {
+                collide.gameObject.GetComponent<WizardHealth>().WizardEnemyTakeDamage(damage);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (explode)
+            {
+                spawnExplosion();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    void spawnExplosion()
+    {
+        Debug.Log("boom");
+        var boom = Instantiate(explosion);
+        boom.transform.position = transform.position;
+        Destroy(gameObject);
     }
 }
