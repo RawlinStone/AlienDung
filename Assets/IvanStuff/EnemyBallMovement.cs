@@ -8,10 +8,26 @@ public class EnemyBallMovement : MonoBehaviour
     public Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public bool p1;
+    public bool p2;
+    GameObject[] players;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        players = GameObject.FindGameObjectsWithTag("Player");
+        foreach(GameObject go in players)
+        {
+            if (p1 && go.gameObject.name == "Player1Sprite")
+            {
+                player = go.transform;
+            }
+            else if (p2 && go.gameObject.name == "Player2Sprite")
+            {
+                player = go.transform;
+            }
+        }
+        
     }
 
     // Update is called once per frame

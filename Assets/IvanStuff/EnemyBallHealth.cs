@@ -8,6 +8,7 @@ public class EnemyBallHealth : MonoBehaviour
     public GameObject playerDies;
     public GameObject[] dropObjects;
     private GameObject[] players;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class EnemyBallHealth : MonoBehaviour
     {
         if(health <= 0)
         {
+            gm.totalEnemies -= 1;
             Destroy(gameObject);
             GameObject t = Instantiate(playerDies, this.transform.position, this.transform.rotation);
             Destroy(t,2f);

@@ -10,11 +10,13 @@ public class TurretHealth : MonoBehaviour
     public GameObject[] dropObjects;
     private GameObject[] players;
     public AudioSource audio;
+    public GameManager gm;
     void Start()
     {
         health = 50;
         players = GameObject.FindGameObjectsWithTag("Player");
         audio = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class TurretHealth : MonoBehaviour
     {
         if(health <= 0)
         {
+            gm.totalEnemies -= 1; 
             GameObject effect = Instantiate(turretExplodes, transform.position, Quaternion.identity);
             
             bool flag = false;

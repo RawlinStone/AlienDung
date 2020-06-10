@@ -8,6 +8,7 @@ public class FireEnemyHealth : MonoBehaviour
     public GameObject deadParticle;
     public GameObject[] dropObjects;
     private GameObject[] players;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class FireEnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            gm.totalEnemies -= 1;
             GameObject t = Instantiate(deadParticle, this.transform.position, this.transform.rotation);
             Destroy(t,2f);
             
