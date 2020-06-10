@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour
 {
-    public float range;
     public float despawnTime;
     public int damage;
     private float timer = 0.0f;
@@ -13,7 +12,7 @@ public class ExplosionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localScale = new Vector3(range, range, 1f);
+        
     }
 
     // Update is called once per frame
@@ -38,6 +37,7 @@ public class ExplosionScript : MonoBehaviour
         Debug.Log(collide.tag);
         if (collide.tag == "Enemy")
         {
+            Debug.Log(collide.name);
             collide.GetComponent<EnemyHealthSystem>().EnemyTakeDamage(damage);
         }
         else if(collide.CompareTag("Turret"))

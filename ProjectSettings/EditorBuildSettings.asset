@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PunitLevelDesignTools/SampleScene.unity
     guid: e22097bf2616d452b905d8fa7e158636
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 08a03d21761111a4a818bd185dabdd76
   m_configObjects: {}
