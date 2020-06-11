@@ -10,7 +10,8 @@ public class EnemyBallMovement : MonoBehaviour
     private Vector2 movement;
     public bool p1;
     public bool p2;
-    public GameObject[] players;
+    GameObject[] players;
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class EnemyBallMovement : MonoBehaviour
                 player = go.transform;
             }
         }
+        time = 1;
         
     }
 
@@ -51,10 +53,17 @@ public class EnemyBallMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && player.name == collision.gameObject.name) {
-            collision.gameObject.GetComponent<PlayerAmmoScript>().changeAmmo(-1);  
+        if(time >= 1)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.GetComponent<PlayerAmmoScript>().changeAmmo(-1);
+            }
+            time = 0;
         }
+        time += Time.deltaTime;
     }
+        
 
 
 
