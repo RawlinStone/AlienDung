@@ -10,7 +10,7 @@ public class EnemyBallMovement : MonoBehaviour
     private Vector2 movement;
     public bool p1;
     public bool p2;
-    GameObject[] players;
+    public GameObject[] players;
     // Start is called before the first frame update
     void Start()
     {
