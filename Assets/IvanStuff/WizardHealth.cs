@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WizardHealth : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class WizardHealth : MonoBehaviour
                 }
             }
             Destroy(gameObject);
+            SceneManager.LoadScene("EndScene");
         }
     }
 
