@@ -53,7 +53,7 @@ public class EnemyBallMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        
         if(time >= 1)
         {
             if (collision.gameObject.CompareTag("Player"))

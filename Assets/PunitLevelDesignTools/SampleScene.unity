@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1pos: {fileID: 1377205521}
-  player2pos: {fileID: 0}
+  player2pos: {fileID: 178477433}
   cam: {fileID: 519420031}
   camSize: 10.82928
   roomTransform: {x: 66.1, y: 26.92, z: -10}
@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1pos: {fileID: 1377205521}
-  player2pos: {fileID: 0}
+  player2pos: {fileID: 178477433}
   cam: {fileID: 519420031}
   camSize: 12.90332
   roomTransform: {x: 103, y: 51.7, z: -10}
@@ -2082,7 +2082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.9, y: -3, z: -10}
+  m_LocalPosition: {x: -22.2, y: -2.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2861,7 +2861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1pos: {fileID: 1377205521}
-  player2pos: {fileID: 0}
+  player2pos: {fileID: 178477433}
   cam: {fileID: 519420031}
   camSize: 12.51145
   roomTransform: {x: 80.7, y: 0.1, z: -10}
@@ -4375,7 +4375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1pos: {fileID: 1377205521}
-  player2pos: {fileID: 0}
+  player2pos: {fileID: 178477433}
   cam: {fileID: 519420031}
   camSize: 10.27928
   roomTransform: {x: 108.7, y: 26.4, z: -10}
@@ -20449,7 +20449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1pos: {fileID: 1377205521}
-  player2pos: {fileID: 0}
+  player2pos: {fileID: 178477433}
   cam: {fileID: 519420031}
   camSize: 12.62472
   roomTransform: {x: 30.4, y: 0.1, z: -10}
