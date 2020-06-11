@@ -23,17 +23,7 @@ public class PickUpItems : MonoBehaviour
                 }
                 else
                 {
-                    int temp = collision.GetComponent<PlayerHealth>().health;
-                    temp = temp + 25;
-                    if(temp > 100)
-                    {
-                        collision.GetComponent<PlayerHealth>().health = 100;
-                    }
-                    else
-                    {
-                        collision.GetComponent<PlayerHealth>().PlayerGainHealth(25);
-                    }
-                    
+                    collision.GetComponent<PlayerHealth>().PlayerGainHealth(RandomQuantity());
                 }
                 
             }
@@ -48,6 +38,4 @@ public class PickUpItems : MonoBehaviour
         Debug.Log(count);
         return count;
     }
-
-    
 }
