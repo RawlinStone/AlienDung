@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject Player2;
     private int player1Ammo;
     private int player2Ammo;
-    
+    public Text enemiesText;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
         p2startammo = 20;
         ammop1.text = "" + p1startammo;
         ammop2.text = "" + p2startammo;
+        enemiesText.text = "X" + totalEnemies;
         player1Ammo = Player1.GetComponent<PlayerAmmoScript>().ammo;
         player2Ammo = Player2.GetComponent<PlayerAmmoScript>().ammo;
     }
@@ -40,11 +43,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player1Alive && !player2Alive)
+        if (!player1Alive && !player2Alive)
         {
             panel.SetActive(true);
         }
-        if(totalEnemies <= 0)
+        if (totalEnemies <= 0)
         {
             closedDoor.SetActive(false);
             openDoorL.SetActive(true);
@@ -57,6 +60,11 @@ public class GameManager : MonoBehaviour
         player2Ammo = Player2.GetComponent<PlayerAmmoScript>().ammo;
         ammop1.text = "" + player1Ammo;
         ammop2.text = "" + p2startammo;
+        if (totalEnemies <= 0)
+        {
+            totalEnemies = 0;
+        }
+        enemiesText.text = "X" + totalEnemies;
     }
 
     public void GameOver()
