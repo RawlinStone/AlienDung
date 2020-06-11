@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         player1Ammo = Player1.GetComponent<PlayerAmmoScript>().ammo;
         player2Ammo = Player2.GetComponent<PlayerAmmoScript>().ammo;
         ammop1.text = "" + player1Ammo;
-        ammop2.text = "" + p2startammo;
+        ammop2.text = "" + player2Ammo;
         if (totalEnemies <= 0)
         {
             totalEnemies = 0;

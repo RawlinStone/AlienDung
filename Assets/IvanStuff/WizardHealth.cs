@@ -9,10 +9,12 @@ public class WizardHealth : MonoBehaviour
     public GameObject wizardDeath;
     public GameObject[] dropObjects;
     private GameObject[] players;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class WizardHealth : MonoBehaviour
 
     public void WizardEnemyTakeDamage(int damage)
     {
+        audio.Play();
         health -= damage;
     }
 

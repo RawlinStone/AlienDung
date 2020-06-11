@@ -9,10 +9,12 @@ public class FireEnemyHealth : MonoBehaviour
     public GameObject[] dropObjects;
     private GameObject[] players;
     public GameManager gm;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class FireEnemyHealth : MonoBehaviour
 
     public void EnemyFireBallDamage(int damage)
     {
+        audio.Play();
         health -= damage; 
     }
 }
