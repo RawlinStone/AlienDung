@@ -102,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health += healthGain;
         }
+        healthBar.SetHealth(health);
     }
 
 

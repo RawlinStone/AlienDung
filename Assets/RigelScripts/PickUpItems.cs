@@ -23,7 +23,7 @@ public class PickUpItems : MonoBehaviour
                 }
                 else
                 {
-                    collision.GetComponent<PlayerHealth>().PlayerGainHealth(RandomQuantity());
+                    collision.GetComponent<PlayerHealth>().PlayerGainHealth(25);
                 }
                 
             }
