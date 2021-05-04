@@ -1,3 +1,2 @@
 # AlienDung
- AlienDung game
-course game developed in Spring 2020
+AlienDung game developed in Spring 2020
